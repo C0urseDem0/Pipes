@@ -97,12 +97,12 @@
                     </select>
                 </td>
 
-                <td *ngIf="!isEditing || std.id !== stdIdToEdit">{{ std.dob }}</td>
+                <td *ngIf="!isEditing || std.id !== stdIdToEdit">{{ std.dob |date:'longDate'}}</td>
                 <td *ngIf="isEditing && std.id === stdIdToEdit">
                     <input type="date" [value]="std.dob" #editDob>
                 </td>
 
-                <td *ngIf="!isEditing || std.id !== stdIdToEdit">{{ std.course }}</td>
+                <td *ngIf="!isEditing || std.id !== stdIdToEdit">{{ std.course |uppercase}}</td>
                 <td *ngIf="isEditing && std.id === stdIdToEdit">
                     <select name="course" class="select-gender-course" [value]="std.course" #editCourse>
                         <option value="MBA">MBA</option>
